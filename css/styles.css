@@ -4,14 +4,14 @@
 /* Variables */
 
 :root {
-  --color-win: #78CF82;
-  --color-lose: #D94545;
-  --color-start: #5b85b7;
+  --color-win: #06D6A0;
+  --color-lose: #EF476F;
+  --color-start: #262626;
   --color-neutral: #445069;
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
-  --font-size-large: 60px;
+  --font-size-large: 75px;
   --font-size-medium: 20px;
   --transition: all .2s ease-in-out;
 }
@@ -112,11 +112,13 @@ button {
 }
 
 .btn__reset {
-  padding: 8px;
+  padding: 16px 32px;
   margin: 50px auto;
-  background: #FFFFFF;
+  background: #073B4C;
   border-radius: 5px;
   font-size: var(--font-size-medium);
+  cursor: pointer;
+  text-shadow: 2px 3px .2px #0d0d0d;
 }
 
 /* Overlay */
@@ -135,7 +137,8 @@ button {
 }
 
 .title {
-  color: #FFF;
+  color: #FFD700;
+  text-shadow: 1px 10px .2px #0d0d0d;
 }
 
 .start {
