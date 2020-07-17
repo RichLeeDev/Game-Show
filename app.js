@@ -1,6 +1,5 @@
 
-
-const qwerty = document.querySelector('#qwerty');
+// query selectors
 const phrase = document.querySelector('#phrase');
 const overlay = document.querySelector('#overlay');
 const startButton = document.querySelector('.btn__reset');
@@ -9,22 +8,24 @@ const keyboard = document.querySelector('#qwerty');
 const heartList = document.querySelector('#scoreboard ol');
 const heartArray = document.querySelectorAll('.tries img');
 const heart = document.querySelector('.tries img');
-
+// missed counter
 let missed = 0;
-let phrases = ['live like there is no tommorrow',
-			   'does love really exist',
-			   'i turned into a pickle',
-			   'vegans are born from vegetables',
-			   'prince of potatoes',
-			   'sexy back is old'];
+let phrases = [
+'live like there is no tommorrow',
+'does love really exist',
+'i turned into a pickle',
+'vegans are born from vegetables',
+'prince of potatoes',
+'sexy back is old'
+];
 
 startButton.addEventListener('click', () => {
 	if (startButton.textContent === 'Start Game') {
-		startGame();
+		initiateGame();
 		overlay.style.display = 'none';
 	} else {
 		resetGame();
-		startGame();
+		initiateGame();
 		overlay.style.display = 'none';
 	}
 });
@@ -35,10 +36,10 @@ function getRandomPhraseAsArray(arr) {
 	const randomPhrase = arr[randomNumber];
 
 	// split that string into new array of characters
-	const characters = randomPhrase.split('');
+	const splitPhrase = randomPhrase.split('');
 
 	// return the new array of characters
-	return characters;
+	return splitPhrase;
 }
 
 function addPhraseToDisplay(arr) {
@@ -135,7 +136,7 @@ function checkWin() {
 		showCorrectPhrase();
 	}
 }
-
+// removes
 function removeShowClass() {
 	for (let i = 0; i < phraseUL.children.length; i++) {
 		phraseUL.children[i].classList.remove('show');
@@ -147,8 +148,8 @@ function showCorrectPhrase() {
 	h4.textContent = 'The correct phrase was: ' + phraseUL.textContent.toUpperCase();
 	overlay.appendChild(h4);
 }
-
-function startGame() {
+// grabs the phrase for the game
+function initiateGame() {
 	const phraseArray = getRandomPhraseAsArray(phrases);
 	addPhraseToDisplay(phraseArray);
 }
